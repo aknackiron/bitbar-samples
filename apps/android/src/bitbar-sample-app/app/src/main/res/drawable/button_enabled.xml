@@ -6,12 +6,8 @@
         android:top="3dp"
         android:right="3dp"
         android:bottom="3dp" />
-    <gradient
-        android:startColor="#98c420"
-        android:endColor="#acdb1c"
-        android:type="linear"
-        android:angle="90"/>
-
+    <solid
+        android:color="#85FFD8" />
     <stroke
         android:width="1dip"
         android:color="#034b5d" />
