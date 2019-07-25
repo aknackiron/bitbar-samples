@@ -27,7 +27,7 @@ public class AndroidAppiumExampleTest  extends BaseAndroidTest {
     public void mainPageTest() throws IOException, InterruptedException {
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         takeScreenshot("start");
-        wd.findElement(By.xpath("//android.widget.RadioButton[@text='Use Testdroid Cloud']")).click();
+        wd.findElement(By.xpath("//android.widget.RadioButton[@text='Use Bitbar device cloud']")).click();
         wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.bitbar.testdroid:id/editText1']")).sendKeys("John Doe");
         takeScreenshot("after_adding_name");
         wd.navigate().back();

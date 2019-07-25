@@ -28,7 +28,7 @@ public class IosAppiumExampleTest extends BaseIOSTest {
         WebElement element = wd.findElement(By.xpath("//*[contains(@name, 'userName')]"));
         takeScreenshot("answer1_element_clicked");
         element.click();
-        element.sendKeys("Testdroid");
+        element.sendKeys("Bitbar");
         wd.hideKeyboard();
         takeScreenshot("answer_typed");
         wd.findElement(By.xpath("//*[contains(@name, 'Return')]")).click();

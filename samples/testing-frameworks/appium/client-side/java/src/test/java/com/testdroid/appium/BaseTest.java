@@ -41,7 +41,7 @@ public abstract class BaseTest {
             logger.debug("Setting client side specific capabilities...");
             String fileUUID = getDefaultFileUUID();
             if (isUploadApplication()) {
-                logger.debug("Uploading " + getTargetAppPath() + " to Testdroid Cloud");
+                logger.debug("Uploading " + getTargetAppPath() + " to Bitbar");
                 fileUUID = FileUploader.uploadFile(getTargetAppPath(), getCloudServerAddress(), getApiKey());
                 logger.debug("File uploaded. File id is " + fileUUID);
             }
