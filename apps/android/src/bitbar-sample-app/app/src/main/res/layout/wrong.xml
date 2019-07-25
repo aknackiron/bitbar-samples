@@ -27,7 +27,8 @@
             android:text="@string/wrongAnswer"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FF0000"
-            android:textSize="30dip" />
+            android:textSize="30dip"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"

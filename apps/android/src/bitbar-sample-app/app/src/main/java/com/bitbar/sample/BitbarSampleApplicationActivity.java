@@ -1,4 +1,4 @@
-package com.bitbar.testdroid;
+package com.bitbar.sample;
 
 import android.app.Activity;
 import android.content.Context;
