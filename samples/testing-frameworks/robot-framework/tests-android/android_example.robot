@@ -4,8 +4,8 @@ Test Teardown    Close Application
 
 *** Variables ***
 ${NAME}                John
-${INPUT_NAME_FIELD}    id = com.bitbar.testdroid:id/editText1
-${SUBMIT_BUTTON}       id = com.bitbar.testdroid:id/button1
+${INPUT_NAME_FIELD}    id = com.bitbar.sample:id/editText1
+${SUBMIT_BUTTON}       id = com.bitbar.sample:id/button1
 
 *** Test cases ***
 
@@ -13,23 +13,23 @@ Simple Smoke Test - Correct Answer
     [Tags]    cloud
     Set Up And Open Android Application
     Input Name       ${NAME}
-    Select Option    Use Testdroid Cloud
+    Select Option    Use Bitbar cloud
     Submit Selection
     Validate Correct Answer
 
 Simple Smoke Test - Wrong Answer
-    [Tags]    101
+    [Tags]    plenty
     Set Up And Open Android Application
     Input Name       ${NAME}
-    Select Option    Buy 101 devices
+    Select Option    Buy plenty of devices
     Submit Selection
     Validate Wrong Answer
 
 Simple Smoke Test - Wrong Answer 2
-    [Tags]    mom
+    [Tags]    friends
     Set Up And Open Android Application
     Input Name       ${NAME}
-    Select Option    Ask mom for help
+    Select Option    Ask friends for help
     Submit Selection
     Validate Wrong Answer
 
@@ -37,7 +37,7 @@ Simple Smoke Test - Fails Intentionally
     [Tags]    fail
     Set Up And Open Android Application
     Input Name       ${NAME}
-    Select Option    Ask mom for help
+    Select Option    Ask friends for help
     Submit Selection
     Validate Correct Answer
 

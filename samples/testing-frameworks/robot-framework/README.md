@@ -18,21 +18,21 @@ There are two runner scripts for running the tests locally, ``run_android.py`` a
 - ``python run_<OS>.py --dryrun`` Runs everything as a dryrun
 - ``-x <xunit_output_file>`` command line option can be used to generate report in xUnit compatible XML format. So for example ``python run_<OS>.py -x xunit`` will run all the test and create ``xunit.xml`` file relatively to the output directory of other test results.
 
-# Running tests on the Cloud:
+# Running tests in the cloud:
 - From ``common.robot`` choose the correct ``${APP_ANDROID}`` or ``${APP_IOS}`` path by uncommenting the one with ``application.apk`` or ``application.ipa`` and commenting out other paths.
-- ``create-test-zip-android.sh`` and ``create-test-zip-ios.sh`` will create .zip files containing all necessary files for cloud execution. Scripts output ``tests-robot-android.zip`` and ``tests-robot-ios.zip`` files that can be uploaded to Testdroid Cloud for test execution.
+- ``create-test-zip-android.sh`` and ``create-test-zip-ios.sh`` will create .zip files containing all necessary files for cloud execution. Scripts output ``tests-robot-android.zip`` and ``tests-robot-ios.zip`` files that can be uploaded to Bitbar for test execution.
 - By default the tests will be run as server-side Appium and the driver is configured to use ``localhost`` address as: ``${REMOTE_URL}    http://localhost:4723/wd/hub``
 - Framework can be configured also to run the tests as client-side Appium. To do this, the ``localhost`` address has to be replaced with ``appium.bitbar.com``. Also following additional capabilities have to be added:
-	- ``testdroid_username``
-	- ``testdroid_password``
-	- ``testdroid_target``
-	- ``testdroid_project``
-	- ``testdroid_testrun``
-	- ``testdroid_device``
-	- ``testdroid_app``
+	- ``bitbar_username``
+	- ``bitbar_password``
+	- ``bitbar_target``
+	- ``bitbar_project``
+	- ``bitbar_testrun``
+	- ``bitbar_device``
+	- ``bitbar_app``
 	- ``BundleID``
 
-	More information about desired capabilities for client-side Appium can be found from Testdroid [Appium Documentation](http://docs.bitbar.com/testing/appium/desired-caps/)
+	More information about desired capabilities for client-side Appium can be found from Bitbar [Appium Documentation](http://docs.bitbar.com/testing/appium/desired-caps/)
 
 # References
 - [Robot Framework User Guide](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
