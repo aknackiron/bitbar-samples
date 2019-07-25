@@ -25,13 +25,13 @@ export default class sampleproject extends Component {
     let {width, height} = Dimensions.get('window')
     
     this.state = {
-      titleText: "What is the best way to test your applications against over one hundred devices?",
-      wrongAnswerText1: 'Buy 101 devices',
-      wrongAnswerText2: 'Ask mom for help',
-      correctAnswerText: 'Use Testdroid Cloud',
+      titleText: "What is the best way to test your mobile app against hundreds of devices?",
+      wrongAnswerText1: 'Buy plenty of devices',
+      wrongAnswerText2: 'Ask friends for help',
+      correctAnswerText: 'Use Bitbar device cloud',
       typeYourNameText: 'Type your name here',
-      wrongAnswerInfoText: "Haven't you heard about Testdroid Cloud?",
-      text: "Anonym Testdroider",
+      wrongAnswerInfoText: "You should check out Bitbar",
+      text: "Anonymous Tester",
       response: undefined,
       answerIsTrue: false
     };
