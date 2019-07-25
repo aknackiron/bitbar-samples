@@ -33,9 +33,9 @@ class BitbarAndroid(unittest.TestCase):
             "My testrun"
         bitbar_app = os.environ.get('BITBAR_APP') or ""
         app_package = os.environ.get('BITBAR_APP_PACKAGE') or \
-            'com.bitbar.testdroid'
+            'com.bitbar.sample'
         app_activity = os.environ.get('BITBAR_ACTIVITY') or \
-            '.BitbarSampleApplicationActivity'
+            'com.bitbar.sample.BitbarSampleApplicationActivity'
         new_command_timeout = os.environ.get('BITBAR_CMD_TIMEOUT') or '60'
         bitbar_test_timeout = os.environ.get('BITBAR_TEST_TIMEOUT') or '600'
         bitbar_find_device = os.environ.get('BITBAR_FINDDEVICE') or "true"
@@ -128,11 +128,11 @@ class BitbarAndroid(unittest.TestCase):
             pass  # pass exception, if keyboard isn't visible already
         self.utils.screenshot("name_typed_keyboard_hidden")
 
-        self.utils.log("  Clicking element 'Buy 101 devices'")
+        self.utils.log("  Clicking element 'Buy plenty of devices'")
         if isSelendroid:
-            elem = self.driver.find_element_by_link_text('Buy 101 devices')
+            elem = self.driver.find_element_by_link_text('Buy plenty of devices')
         else:
-            elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Buy 101 devices")')
+            elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Buy plenty of devices")')
         elem.click()
 
         self.utils.screenshot("clicked_button1")
@@ -150,11 +150,11 @@ class BitbarAndroid(unittest.TestCase):
         self.driver.back()
         self.utils.screenshot("main_activity")
 
-        self.utils.log("  Clicking element 'Use Testdroid Cloud'")
+        self.utils.log("  Clicking element 'Use Bitbar device cloud'")
         if isSelendroid:
-            elem = self.driver.find_element_by_link_text('Use Testdroid Cloud')
+            elem = self.driver.find_element_by_link_text('Use Bitbar device cloud')
         else:
-            elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Use Testdroid Cloud")')
+            elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Use Bitbar device cloud")')
         elem.click()
 
         self.utils.screenshot("clicked_button2")
