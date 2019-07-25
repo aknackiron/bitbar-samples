@@ -13,7 +13,7 @@ include Selenium
 ##
 ## IMPORTANT: Set the following parameters.
 ##
-screen_shot_dir = "screenshot-folder"
+screen_shot_dir = "."
 bitbar_api_key = ENV["BITBAR_APIKEY"]
 bitbar_device = "Samsung Galaxy Nexus GT-I9250 4.2.2" # Example device. Change if you desire.
 bitbar_app_file = "BitbarAndroidSample.apk"
@@ -35,8 +35,8 @@ desired_capabilities_cloud = {
     'bitbar_description' => 'Appium project description',
     'bitbar_testrun' => 'Selendroid Run 1',
     'bitbar_device' => bitbar_device,
-    'app-package' => 'com.bitbar.testdroid',
-    'app-activity' => '.BitbarSampleApplicationActivity',
+    'app-package' => 'com.bitbar.sample',
+    'app-activity' => 'com.bitbar.sample.BitbarSampleApplicationActivity',
 }
 
 
@@ -83,11 +83,11 @@ describe "BitbarAndroidSample testing" do
   end
 
   it "should show failure page" do
-    log ("view1: Clicking RadioButton 0 - 'Buy 101 devices'")
+    log ("view1: Clicking RadioButton 0 - 'Buy plenty of devices'")
     @driver.find_elements(:id, 'radio0')[0].click()
 
-    log ("view1: Typing in EditText[0]: Testdroid user")
-    @driver.find_elements(:tag_name, :EditText)[0].send_keys("Testdroid user")
+    log ("view1: Typing in EditText[0]: Bitbar user")
+    @driver.find_elements(:tag_name, :EditText)[0].send_keys("Bitbar user")
 
     log ("view1: Taking screenshot screenshot1.png")
     @driver.save_screenshot(screen_shot_dir + "/screenshot1.png")

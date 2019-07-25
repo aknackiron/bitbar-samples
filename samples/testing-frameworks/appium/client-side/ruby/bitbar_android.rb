@@ -14,11 +14,11 @@ include Selenium
 ##
 ## IMPORTANT: Set the following parameters.
 ##
-screen_shot_dir = "screenshot-folder"
+screen_shot_dir = "."
 bitbar_api_key = ENV["BITBAR_APIKEY"]
 bitbar_device = ENV["BITBAR_DEVICE"]
 bitbar_find_device = ENV["BITBAR_FIND_DEVICE"]
-bitbar_app_file = "../../../../../apps/android/bitbar-sample-app.apk"
+bitbar_app_file = ENV["BITBAR_APP"] # "../../../../../apps/android/bitbar-sample-app.apk"
 
 
 def log(msg)
@@ -37,8 +37,8 @@ desired_capabilities_cloud = {
     'bitbar_testrun' => 'Test Run 1',
     'bitbar_device' => bitbar_device,
     'bitbar_findDevice' => bitbar_find_device,
-    'app-package' => 'com.bitbar.testdroid',
-    'app-activity' => '.BitbarSampleApplicationActivity',
+    'app-package' => 'com.bitbar.sample',
+    'app-activity' => 'com.bitbar.sample.BitbarSampleApplicationActivity',
 }
 
 
@@ -67,7 +67,7 @@ describe "BitbarSampleApp testing" do
     http_client = WebDriver::Remote::Http::Curb.new
     http_client.timeout = nil #not timeout for Webdriver calls
     log ("Start Webdriver with [#{desired_capabilities_cloud}]")
-    @driver = Appium::Driver.new ({:caps => desired_capabilities_cloud, :appium_lib => {:server_url => server_url}})
+    @driver = Appium::Driver.new({:caps => desired_capabilities_cloud, :appium_lib => {:server_url => server_url}}, true)
     @web_driver = @driver.start_driver()
     log ("WebDriver response received")
   end
@@ -78,18 +78,18 @@ describe "BitbarSampleApp testing" do
   end
 
   it "should show failure page" do
-    log ("view1: Clicking button - 'Buy 101 devices'")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/radio0').click
+    log ("view1: Clicking button - 'Buy plenty of devices'")
+    @driver.find_element(:id, 'com.bitbar.sample:id/radio0').click
     log ("view1: Typing in textfield[0]: Bitbar user")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/editText1').send_keys("Bitbar user")
+    @driver.find_element(:id, 'com.bitbar.sample:id/editText1').send_keys("Bitbar user")
     @driver.navigate.back()
     log ("view1: Taking screenshot screenshot1.png")
     @driver.screenshot(screen_shot_dir + "/screenshot1.png")
     log ("view1: Clicking button Answer")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/button1').click
+    @driver.find_element(:id, 'com.bitbar.sample:id/button1').click
     log ("view2: Taking screenshot screenshot2.png")
     @driver.screenshot(screen_shot_dir + "/screenshot2.png")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/textView1').text == 'Wrong Answer!'
+    @driver.find_element(:id, 'com.bitbar.sample:id/textView1').text == 'Wrong Answer!'
     sleep(2)
   end
 
@@ -99,15 +99,15 @@ describe "BitbarSampleApp testing" do
   end
 
   it "should click 2nd radio button" do
-    log ("view1: Clicking button - 'Use Testdroid Cloud'")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/radio1').click
+    log ("view1: Clicking button - 'Use Bitbar device cloud'")
+    @driver.find_element(:id, 'com.bitbar.sample:id/radio1').click
     log ("view1: Taking screenshot screenshot3.png")
     @driver.screenshot(screen_shot_dir + "/screenshot3.png")
     log ("view1: Clicking Answer")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/button1').click
+    @driver.find_element(:id, 'com.bitbar.sample:id/button1').click
     log ("view2: Taking screenshot screenshot4.png")
     @driver.screenshot(screen_shot_dir + "/screenshot4.png")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/textView1').text == 'You are right!'
+    @driver.find_element(:id, 'com.bitbar.sample:id/textView1').text == 'You are right!'
     log ("view2: Sleeping 3 before quitting webdriver")
     sleep(3)
   end

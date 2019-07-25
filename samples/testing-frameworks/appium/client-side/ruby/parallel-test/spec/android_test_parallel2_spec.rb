@@ -20,8 +20,8 @@ end
 describe "BitbarAndroid Sample testing" do
 
   it "Click on radio button" do
-    log ("view1: Clicking button [0] - 'Buy 101 devices'")
-    RSpec.configuration.web_driver().find_elements(:name, 'Buy 101 devices')[0].click()
+    log ("view1: Clicking button [0] - 'Buy plenty of devices'")
+    RSpec.configuration.web_driver().find_elements(:name, 'Buy plenty of devices')[0].click()
     
   end
 

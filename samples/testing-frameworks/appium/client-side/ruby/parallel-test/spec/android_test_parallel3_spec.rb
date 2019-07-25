@@ -20,8 +20,8 @@ end
 describe "BitbarAndroid Sample testing" do
 
   it "Click on radio button" do
-    log ("view1: Clicking button [0] - 'Use Testdroid Cloud'")
-    RSpec.configuration.web_driver().find_elements(:name, 'Use Testdroid Cloud')[0].click()
+    log ("view1: Clicking button [0] - 'Use Bitbar device cloud'")
+    RSpec.configuration.web_driver().find_elements(:name, 'Use Bitbar device cloud')[0].click()
     
   end
 

@@ -19,14 +19,18 @@ and dependencies.
 
 * Install necessary gems and dependencies. Run in current directory:
 
+    ```
     bundle install
+    ```
 
 * Update your test script (bitbar_*.rb) with necessary information
   (see below).
 
 * Start test case run with eg.:
 
+    ```
     rspec bitbar_android.rb
+    ```
 
 ## Common Necessary Settings
 
@@ -51,6 +55,9 @@ Here are all the values that you need to edit:
   names can be modified even at every test run
 
 * *bitbar_app* - should be the id of the app you uploaded to cloud.
+
+* *bitbar_find_device* - if you don't give an exact device name, then
+   you need to se this to "true"
 
 ## Native iOS Specific Settings
 
