@@ -24,8 +24,8 @@ class SetupAppium
     desired_caps = {}
     desired_caps['platformName'] = 'Android'
     desired_caps['automationName'] = 'Appium'
-    desired_caps['appPackage'] = 'com.bitbar.testdroid'
-    desired_caps['appActivity'] = '.BitbarSampleApplicationActivity'
+    desired_caps['appPackage'] = 'com.bitbar.sample'
+    desired_caps['appActivity'] = 'com.bitbar.sample.BitbarSampleApplicationActivity'
     desired_caps['deviceName'] = 'Android device'
     desired_caps['app'] = "#{@@app_file_android}"
     server_url = 'http://localhost:4723/wd/hub'

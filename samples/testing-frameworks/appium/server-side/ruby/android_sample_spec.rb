@@ -15,21 +15,21 @@ describe "TestSuite" do
   end
 
   it "should show failure page"  do
-    @log.log("view1: Clicking button - 'Buy 101 devices'")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/radio0').click
+    @log.log("view1: Clicking button - 'Buy plenty of devices'")
+    @driver.find_element(:id, 'com.bitbar.sample:id/radio0').click
 
     @log.log("view1: Typing in textfield[0]: Bitbar user")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/editText1').send_keys("Bitbar user")
+    @driver.find_element(:id, 'com.bitbar.sample:id/editText1').send_keys("Bitbar user")
     @driver.hide_keyboard
     @log.log("view1: Taking screenshot screenshot1.png")
     @driver.screenshot("#{SetupAppium.screenshot_dir}screenshot1.png")
 
     @log.log("view1: Clicking button Answer")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/button1').click
+    @driver.find_element(:id, 'com.bitbar.sample:id/button1').click
 
     @log.log("view2: Taking screenshot screenshot2.png")
     @driver.screenshot("#{SetupAppium.screenshot_dir}screenshot2.png")
-    expect(@driver.find_element(:id, 'com.bitbar.testdroid:id/textView1').text).to match('Wrong Answer!')
+    expect(@driver.find_element(:id, 'com.bitbar.sample:id/textView1').text).to match('Wrong Answer!')
     sleep(2)
   end
 
@@ -40,15 +40,15 @@ describe "TestSuite" do
   end
 
   it "should click 2nd radio button" do
-    @log.log("view1: Clicking button - 'Use Testdroid Cloud'")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/radio1').click
+    @log.log("view1: Clicking button - 'Use Bitbar device cloud'")
+    @driver.find_element(:id, 'com.bitbar.sample:id/radio1').click
     @driver.screenshot("#{SetupAppium.screenshot_dir}screenshot3.png")
     @log.log("view1: Clicking Answer")
-    @driver.find_element(:id, 'com.bitbar.testdroid:id/button1').click
+    @driver.find_element(:id, 'com.bitbar.sample:id/button1').click
 
     @log.log("view1: Taking screenshot screenshot4.png")
     @driver.screenshot("#{SetupAppium.screenshot_dir}screenshot4.png")
-    expect(@driver.find_element(:id, 'com.bitbar.testdroid:id/textView1').text).to match('You are right!')
+    expect(@driver.find_element(:id, 'com.bitbar.sample:id/textView1').text).to match('You are right!')
     @log.log("view1: Sleeping 3 before quitting webdriver")
     sleep(3)
   end
