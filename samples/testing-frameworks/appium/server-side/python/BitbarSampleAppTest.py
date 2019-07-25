@@ -4,12 +4,12 @@
 import unittest
 import xmlrunner
 from time import sleep
-from TestdroidAppiumTest import TestdroidAppiumTest, log
+from BitbarAppiumTest import BitbarAppiumTest, log
 from selenium.common.exceptions import WebDriverException
 
-class BitbarSampleAppTest(TestdroidAppiumTest):
+class BitbarSampleAppTest(BitbarAppiumTest):
     def setUp(self):
-        # TestdroidAppiumTest takes settings (local or cloud) from environment variables
+        # BitbarAppiumTest takes settings (local or cloud) from environment variables
         super(BitbarSampleAppTest, self).setUp()
     
     # Test start.    
@@ -25,11 +25,11 @@ class BitbarSampleAppTest(TestdroidAppiumTest):
             try:
                 log("Taking screenshot 0_appLaunch.png")
                 driver.save_screenshot(self.screenshot_dir + "/0_appLaunch.png")
-                log("Clicking element 'Use Testdroid Cloud'")
+                log("Clicking element 'Use Bitbar device cloud'")
                 if self.isSelendroid():
                     elem = driver.find_element_by_xpath("//LinearLayout[1]/FrameLayout[1]/ScrollView[1]/LinearLayout[1]/LinearLayout[1]/RadioGroup[1]/RadioButton[2]")
                 else:
-                    elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Use Testdroid Cloud")')
+                    elem = self.driver.find_element_by_android_uiautomator('new UiSelector().text("Use Bitbar device cloud")')
                 self.assertTrue(elem)
                 elem.click()
                 sleep(2) # always sleep before taking screenshot to let transition animations finish

@@ -1,7 +1,7 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 #
-# Copyright(C) 2014 Bitbar Technologies Oy
+# Copyright(C) 2019 Bitbar Technologies Oy
 #
 #
 # NOTE: This is very much work in progress
@@ -26,7 +26,7 @@ def log(msg):
     print ("%s%s: %s" % (header, time.strftime("%H:%M:%S"),msg))
     sys.stdout.flush()
 
-class TestdroidAppiumTest(unittest.TestCase):
+class BitbarAppiumTest(unittest.TestCase):
 
     # Appium
     driver = None
