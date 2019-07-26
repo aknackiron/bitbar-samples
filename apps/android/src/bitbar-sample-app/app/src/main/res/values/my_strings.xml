@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="question">What is the best way to test your mobile app against hundreds of devices?</string>
     <string name="imageDescription">Bitbar logo</string>
     <string name="answer1">Buy plenty of devices</string>
@@ -13,5 +12,4 @@
     <string name="wrongAnswer">Wrong Answer!</string>
     <string name="wrongMsg">"You should check out Bitbar"</string>
     <string name="hint">Please type your name to proceed</string>
-
 </resources>
