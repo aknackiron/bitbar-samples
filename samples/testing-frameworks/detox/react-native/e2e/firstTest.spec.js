@@ -57,13 +57,13 @@ describe('sampleproject', () => {
   it('should say Buy plenty of devices for wrong_answer_button1 element', async () => {
     await waitFor(element(by.id('wrong_answer_button1'))).toBeVisible().withTimeout(6000);
   	await expect(element(by.id('wrong_answer_button1'))).toBeVisible();
-  	await expect(element(by.id('wrong_answer_button1').withAncestor(by.text('Buy 101 devices'))));
+  	await expect(element(by.id('wrong_answer_button1').withAncestor(by.text('Buy plenty of devices'))));
   });
 
   it('should say Ask friends for help for wrong_answer_button2 element', async () => {
     await waitFor(element(by.id('wrong_answer_button2'))).toBeVisible().withTimeout(6000);
   	await expect(element(by.id('wrong_answer_button2'))).toBeVisible();
-  	await expect(element(by.id('wrong_answer_button2').withAncestor(by.text('Ask mom for help'))));
+  	await expect(element(by.id('wrong_answer_button2').withAncestor(by.text('Ask friends for help'))));
   });
 
   it('should say Use Bitbar device cloud for correct_answer_button element', async () => {
