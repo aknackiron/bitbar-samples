@@ -109,9 +109,9 @@ Create a zip file containing the project, which will be uploaded to [Bitbar Clou
 ## Test Cases
 This is where the (Test)Magic happens. The test logic of the example test cases is located in:
 
-- <b>Android:</b> <i>src/test/java/com/testdroid/appium/android/sample/AndroidAppiumExampleTest.java</i>
+- <b>Android:</b> <i>src/test/java/com/bitbar/appium/android/sample/AndroidAppiumExampleTest.java</i>
 
-- <b>iOS:</b> <i>src/test/java/com/testdroid/appium/ios/sample/IosAppiumExampleTest.java</i>
+- <b>iOS:</b> <i>src/test/java/com/bitbar/appium/ios/sample/IosAppiumExampleTest.java</i>
 
 <b>These are the files you want to edit when testing your own application based on this template.</b>
 
@@ -119,7 +119,7 @@ This is where the (Test)Magic happens. The test logic of the example test cases 
 
 The logic related to setting up the test session is located in:
 
-- <i>src/test/java/com/testdroid/appium/BaseTest.java</i>
+- <i>src/test/java/com/bitbar/appium/BaseTest.java</i>
 
 This functionality is inherited by the test cases as follows:
 
@@ -140,7 +140,7 @@ The properties-files are in the following format:
 ```
 <desired_capability_name>=<desired_capability_value>
 ```
-The desired capabilities can be divided to Appium-specific desired capabilities (such as <i>platformName</i> and <i>deviceName</i>) and Bitbar-specific desired capabilities (such as <i>testdroid_device</i> or <i>testdroid_project</i>).
+The desired capabilities can be divided to Appium-specific desired capabilities (such as <i>platformName</i> and <i>deviceName</i>) and Bitbar-specific desired capabilities (such as <i>bitbar_device</i> or <i>bitbar_project</i>).
 
 The Bitbar-specific desired capabilities have to only be defined for Client Side Test Execution.
 

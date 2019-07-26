@@ -1,11 +1,11 @@
-package com.testdroid.appium.android.sample;
+package com.bitbar.appium.android.sample;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.testdroid.appium.BaseAndroidTest;
+import com.bitbar.appium.BaseAndroidTest;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +28,7 @@ public class AndroidAppiumExampleTest  extends BaseAndroidTest {
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         takeScreenshot("start");
         wd.findElement(By.xpath("//android.widget.RadioButton[@text='Use Bitbar device cloud']")).click();
-        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.bitbar.testdroid:id/editText1']")).sendKeys("John Doe");
+        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.bitbar.sample:id/editText1']")).sendKeys("John Doe");
         takeScreenshot("after_adding_name");
         wd.navigate().back();
         wd.findElement(By.xpath("//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.Button[1]")).click();

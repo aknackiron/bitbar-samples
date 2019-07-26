@@ -1,4 +1,4 @@
-package com.testdroid.appium;
+package com.bitbar.appium;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,9 +25,9 @@ public class FileUploader {
     private static final JsonFactory JSON_FACTORY = new JacksonFactory();
     protected static Logger logger = LoggerFactory.getLogger(FileUploader.class);
     
-    protected static String uploadFile(String targetAppPath, String serverURL, String testdroid_apikey)
+    protected static String uploadFile(String targetAppPath, String serverURL, String bitbar_apikey)
             throws IOException {
-        final HttpHeaders headers = new HttpHeaders().setBasicAuthentication(testdroid_apikey, "");
+        final HttpHeaders headers = new HttpHeaders().setBasicAuthentication(bitbar_apikey, "");
 
         HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
             public void initialize(HttpRequest request) {

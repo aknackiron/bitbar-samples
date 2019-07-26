@@ -1,4 +1,4 @@
-package com.testdroid.appium;
+package com.bitbar.appium;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -47,10 +47,10 @@ public abstract class BaseTest {
             }
             if (exportTestResultsToCloud()) {
                 logger.debug("Exporting results enabled");
-                capabilities.setCapability("testdroid_junitWaitTime", 300);
+                capabilities.setCapability("bitbar_junitWaitTime", 300);
             }
-            capabilities.setCapability("testdroid_app", fileUUID);
-            capabilities.setCapability("testdroid_apiKey", getApiKey());
+            capabilities.setCapability("bitbar_app", fileUUID);
+            capabilities.setCapability("bitbar_apiKey", getApiKey());
             logger.debug("Setting client side specific capabilities... FINISHED");
         } else if (isServerSideTestRun()) {
             logger.debug("Setting server side specific capabilities...");
@@ -66,12 +66,12 @@ public abstract class BaseTest {
 
     private String getDefaultFileUUID() {
         String defaultAppUUID = "latest";
-        String propertiesAppUUID = (String) capabilities.getCapability("testdroid_app");
+        String propertiesAppUUID = (String) capabilities.getCapability("bitbar_app");
         if (propertiesAppUUID == null || propertiesAppUUID.isEmpty()) {
-            logger.debug("testdroid_app not defined in properties, defaulting to \"latest\" if no .apk/.ipa has been defined with -DapplicationPath for upload");
+            logger.debug("bitbar_app not defined in properties, defaulting to \"latest\" if no .apk/.ipa has been defined with -DapplicationPath for upload");
             return defaultAppUUID;
         }
-        logger.debug("testdroid_app defined in properties, defaulting to \"" + propertiesAppUUID + "\" if no .apk has been defined with -DapplicationPath for upload");
+        logger.debug("bitbar_app defined in properties, defaulting to \"" + propertiesAppUUID + "\" if no .apk has been defined with -DapplicationPath for upload");
         return propertiesAppUUID;
     }
 

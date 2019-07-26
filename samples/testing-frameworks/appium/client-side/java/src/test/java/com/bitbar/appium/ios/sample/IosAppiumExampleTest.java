@@ -1,11 +1,11 @@
-package com.testdroid.appium.ios.sample;
+package com.bitbar.appium.ios.sample;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import com.testdroid.appium.BaseIOSTest;
+import com.bitbar.appium.BaseIOSTest;
 
 import java.util.concurrent.TimeUnit;
 
