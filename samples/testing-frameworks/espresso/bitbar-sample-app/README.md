@@ -13,7 +13,7 @@ or
 ```./gradlew clean connectedAndroidTest```
 
 
-Apks to upload to testdroid cloud will be in (after project is built):
+Apks to upload to Bitbar cloud will be in (after project is built):
 
 `/BitbarSampleApp/app/build/outputs/apk`
 
@@ -28,14 +28,15 @@ Set this as screenshots directory: <b>/sdcard/Pictures/Screenshots</b>
 </pre>
 
 
-These commands can be set in `"Use test cases from:"` option in "4. Advanced options:" section in a new cloud test run, if `"class"` is selected:
+These commands can be set in `"Use test cases from:"` option in "4. Advanced options:" section in
+a new cloud test run, if `"class"` is selected:
 
 run tests in class:
 ```
-com.bitbar.testdroid.sampletests.BitbarSampleTests
+com.bitbar.sample.sampletests.BitbarSampleTests
 ```
 
 run a test in a class:
 ```
-com.bitbar.testdroid.sampletests.BitbarSampleTests#wrongAnswerTest
+com.bitbar.sample.sampletests.BitbarSampleTests#wrongAnswerTest
 ```

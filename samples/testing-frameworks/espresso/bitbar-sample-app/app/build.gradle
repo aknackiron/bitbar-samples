@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 14
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 26
 
     defaultConfig {
-        applicationId "com.bitbar.testdroid"
+        applicationId "com.bitbar.sample"
         minSdkVersion 14
-        targetSdkVersion 14
+        targetSdkVersion 26
 
-        testApplicationId "com.bitbar.testdroid.sampletests.test"
+        testApplicationId "com.bitbar.sample.sampletests.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

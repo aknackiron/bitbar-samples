@@ -1,5 +1,5 @@
 
-package com.bitbar.testdroid.sampletests;
+package com.bitbar.sample.sampletests;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,8 +11,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.filters.LargeTest;
 
-import com.bitbar.testdroid.BitbarSampleApplicationActivity;
-import com.bitbar.testdroid.R;
+import com.bitbar.sample.BitbarSampleApplicationActivity;
+import com.bitbar.sample.R;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -91,7 +91,7 @@ public class BitbarSampleTests extends TestUtilities {
 
     public void wrongAnswerTest() throws Exception {
 
-        // select "Buy 101 devices"
+        // select "Buy plenty of devices"
         onView(withId(R.id.radio0)).perform(click());
 
         takeScreenshot("wrongAnswer-app-open", getCurrentActivity());
@@ -106,17 +106,17 @@ public class BitbarSampleTests extends TestUtilities {
         onView(withId(R.id.button1)).perform(click());
 
         // check that proper element is visible
-        onView(withId(R.id.wrongTextView1)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView1)).check(matches(isDisplayed()));
 
         takeScreenshot("wrongAnswer-atWrongAnswerScreen", getCurrentActivity());
 
         // check that element contains correct text (Wrong Answer!)
-        onView(withId(R.id.wrongTextView1)).check(matches(withText(WRONG_ANSWER_TEXT)));
+        onView(withId(R.id.textView1)).check(matches(withText(WRONG_ANSWER_TEXT)));
     }
 
     public void rightAnswerTest() throws Exception {
 
-        // select "Use Testdroid cloud"
+        // select "Use Bitbar cloud"
         onView(withId(R.id.radio1)).perform(click());
 
         takeScreenshot("rightAnswer-app-open", getCurrentActivity());
@@ -131,17 +131,18 @@ public class BitbarSampleTests extends TestUtilities {
         onView(withId(R.id.button1)).perform(click());
 
         // check that proper element is visible
-        onView(withId(R.id.correctTextView1)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView2)).check(matches(isDisplayed()));
 
         takeScreenshot("rightAnswer-atRightAnswerScreen", getCurrentActivity());
 
         // check that element contains correct text (You are right!)
-        onView(withId(R.id.correctTextView1)).check(matches(withText(RIGHT_ANSWER_TEXT)));
+        //onView(withId(R.id.textView2)).check(matches(withText(RIGHT_ANSWER_TEXT)));
+        onView(withId(R.id.textView2)).check(matches(withText("Congratulations "+ STRING_TO_BE_TYPED +"!")));
     }
 
     public void failTest() throws Exception {
 
-        // select "Ask mom for help
+        // select "Ask friends for help
         onView(withId(R.id.radio2)).perform(click());
 
         takeScreenshot("failTestIntentionally-app-open", getCurrentActivity());
@@ -156,11 +157,11 @@ public class BitbarSampleTests extends TestUtilities {
         onView(withId(R.id.button1)).perform(click());
 
         // check that proper element is visible
-        onView(withId(R.id.wrongTextView1)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView1)).check(matches(isDisplayed()));
 
         takeScreenshot("failTestIntentionally-atWrongAnswerScreen", getCurrentActivity());
 
         // check that element does not contain text (Wrong Answer!)
-        onView(withId(R.id.wrongTextView1)).check(matches(not(withText(WRONG_ANSWER_TEXT))));
+        onView(withId(R.id.textView1)).check(matches(not(withText(WRONG_ANSWER_TEXT))));
     }
 }

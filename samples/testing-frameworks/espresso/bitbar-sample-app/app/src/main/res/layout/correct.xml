@@ -20,7 +20,7 @@
             android:src="@drawable/logo_cloud" />
 
         <TextView
-            android:id="@+id/correctTextView1"
+            android:id="@+id/textView1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -30,7 +30,7 @@
             android:textSize="30dip" />
 
         <TextView
-            android:id="@+id/correctTextView2"
+            android:id="@+id/textView2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

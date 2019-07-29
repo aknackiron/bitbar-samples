@@ -1,4 +1,4 @@
-package com.bitbar.testdroid.sampletests;
+package com.bitbar.sample.sampletests;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
